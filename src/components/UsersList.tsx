@@ -1,13 +1,24 @@
 import React from "react";
-import {useSelector} from 'react-redux'
 import {useTypedSelector} from "../hooks/useTypedSelector";
 
 
 export const UsersList: React.FC = () => {
 
-  const state = useTypedSelector(state => state.user)
-  console.log('state', state)
+  const {users, loading, error} = useTypedSelector(state => state.user)
+  console.log('state', users)
+  if(loading) {
+    return <h1>...loading</h1>
+  }
+  if(error) {
+    return <span>{error}</span>
+  }
   return (
-    <div>edde</div>
+    <>
+      {
+        users.map(({id, name}) => (
+          <div key={id}>{name}</div>
+        ))
+      }
+    </>
   )
 }

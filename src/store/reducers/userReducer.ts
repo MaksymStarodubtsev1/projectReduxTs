@@ -20,6 +20,7 @@ export const userReducer = (state = initialState, action: UserAction): UserState
         loading: false,
         error: null,
       }
+
     case UserActionTypes.FETCH_USERS_ERROR:
       return {
         users: [],
