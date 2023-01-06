@@ -1,0 +1,41 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    max-width: 20%;
+    border: 1px solid black;
+    padding: 1px;
+    margin: 6px 0;
+
+    &_todos {
+        max-width: 40%;
+        border-color: #d3ffcd;
+    }
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    margin-left: -5px;
+
+    &_page {
+        height: 20px;
+        margin: 0 5px;
+        padding: 20px;
+        text-align: center;
+        border: 2px solid black;
+
+       + .selected {
+          border: 2px solid darkred;
+      }
+
+      &:hover {
+          cursor: pointer;
+          border-color: aqua;
+      }
+    }
+}
+

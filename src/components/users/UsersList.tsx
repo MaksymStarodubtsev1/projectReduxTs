@@ -1,8 +1,7 @@
 import React from "react";
-import "./styles.css";
+import "../styles.scss";
 
-import {useTypedSelector} from "../hooks/useTypedSelector";
-
+import {useTypedSelector} from "../../hooks/useTypedSelector";
 
 export const UsersList: React.FC = () => {
 
@@ -18,7 +17,7 @@ export const UsersList: React.FC = () => {
     <>
       {
         users.map(({id, name}) => (
-          <div className="user" key={id}>{name}</div>
+          <div className="block" key={id}>{name}</div>
         ))
       }
     </>
